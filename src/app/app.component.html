@@ -31,30 +31,12 @@
           LOGO
         </div>
       </div>
-      <div class="team-member-photo" [ngStyle]="{
-        left: '-2rem',
-        top: '12rem'
-      }"></div>
-      <div class="team-member-photo" [ngStyle]="{
-        left: '0.5rem',
-        top: '34rem'
-      }"></div>
-      <div class="team-member-photo" [ngStyle]="{
-        left: '14rem',
-        top: '3rem'
-      }"></div>
-      <div class="team-member-photo" [ngStyle]="{
-        right: '4rem',
-        top: '2rem'
-      }"></div>
-      <div class="team-member-photo" [ngStyle]="{
-        right: '-3.5rem',
-        top: '21rem'
-      }"></div>
-      <div class="team-member-photo" [ngStyle]="{
-        right: '14rem',
-        bottom: '3rem'
-      }"></div>
+      <app-team-member
+       *ngFor="let member of teamMembers"
+       [name]="member.name"
+       [role]="member.role"
+       [ngStyle]="member.position"
+      ></app-team-member>
       <div class="circle-point" [ngStyle]="{
         right: '8rem',
         bottom: '11.5rem'
