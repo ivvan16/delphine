@@ -7,6 +7,9 @@
       <div>Contacts</div>
       <div class="nav-login">
         <div>Join us</div>
+        <div class="circle-action">
+          <img [src]="assetsPath + '/arrow-right.svg'">
+        </div>
       </div>
     </div>
   </div>
@@ -102,14 +105,17 @@
   </div>
   <div class="footer">
     <div class="footer-contacts">
-      <img src="../assets/instagram.svg">
-      <img src="../assets/twitter.svg">
-      <img src="../assets/discord.svg">
+      <img [src]="assetsPath + '/instagram.svg'">
+      <img [src]="assetsPath + '/twitter.svg'">
+      <img [src]="assetsPath + '/discord.svg'">
       <div class="footer-mail">ask@delphyne.io</div>
     </div>
     <div class="nav-section">
       <div class="nav-login">
         <div>To the top</div>
+        <div class="circle-action">
+          <img [src]="assetsPath + '/arrow-top.svg'">
+        </div>
       </div>
     </div>
   </div>

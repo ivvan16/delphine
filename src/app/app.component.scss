@@ -37,10 +37,30 @@
 
 .nav-section > * {
   margin-right: 48px;
+  align-self: center;
 }
 
 .nav-login {
-  color: #C292F0
+  color: #C292F0;
+  display: flex;
+  flex-direction: row;
+  margin-right: 0 !important;
+  cursor: pointer;
+}
+
+.circle-action {
+  height: 2rem;
+  width: 2rem;
+  background: radial-gradient(#C292F0 0%, #C292F0 40%, rgba(194, 146, 240, 0) 71%);
+  margin-right: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-login > * {
+  margin-right: 0.6rem;
+  align-self: center;
 }
 
 .container {
