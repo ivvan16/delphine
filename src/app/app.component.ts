@@ -61,4 +61,8 @@ export class AppComponent {
   ];
 
   assetsPath = environment.assetsPath;
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
 }

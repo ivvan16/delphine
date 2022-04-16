@@ -1,11 +1,12 @@
 <div class="outer-container">
-  <div class="navbar">
+  <div #navBar class="navbar">
     <div class="nav-logo">LOGO</div>
     <div class="nav-section">
       <div>About project</div>
       <div>Team</div>
       <div>Contacts</div>
-      <div class="nav-login">
+      <div class="nav-login"
+        (click)="scroll(contactForm)">
         <div>Join us</div>
         <div class="circle-action">
           <img [src]="assetsPath + '/arrow-right.svg'">
@@ -91,7 +92,7 @@
       }"></div>
     </div>
   </div>
-  <div class="contact-form">
+  <div #contactForm class="contact-form">
     <div class="contact-header">Get in touch!</div>
     <div class="contact-sub-header">
       Please, provide your email to get notified when the project is launched
@@ -111,7 +112,8 @@
       <div class="footer-mail">ask@delphyne.io</div>
     </div>
     <div class="nav-section">
-      <div class="nav-login">
+      <div class="nav-login"
+        (click)="scroll(navBar)">
         <div>To the top</div>
         <div class="circle-action">
           <img [src]="assetsPath + '/arrow-top.svg'">
