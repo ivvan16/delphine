@@ -10,18 +10,18 @@ export class TeamMemberComponent implements OnInit {
   @Input() name = "";
   @Input() role = "";
 
-  showTooltip = false;
+  showTooltip = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @HostListener('mouseenter') onEnter() {
-    this.showTooltip = true;
-  }
+  // @HostListener('mouseenter') onEnter() {
+  //   this.showTooltip = true;
+  // }
 
-  @HostListener('mouseleave') onLeave() {
-    this.showTooltip = false;
-  }
+  // @HostListener('mouseleave') onLeave() {
+  //   this.showTooltip = false;
+  // }
 
 }

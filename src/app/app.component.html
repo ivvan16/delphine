@@ -2,9 +2,9 @@
   <div #navBar class="navbar">
     <div class="nav-logo">LOGO</div>
     <div class="nav-section">
-      <div>About project</div>
-      <div>Team</div>
-      <div>Contacts</div>
+      <div (click)="scroll(projectSection)">About project</div>
+      <div (click)="scroll(teamSection)">Team</div>
+      <div (click)="scroll(contactForm)">Contacts</div>
       <div class="nav-login"
         (click)="scroll(contactForm)">
         <div>Join us</div>
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="team-section">
-    <div class="what-we-do-section">
+    <div #projectSection class="what-we-do-section">
       <div class="left-section">
         <p>What we do:</p>
         <div>
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="team-header">Team</div>
+    <div #teamSection class="team-header">Team</div>
     <div class="team-circle1">
       <div class="team-circle2">
         <div class="logo-circle">
