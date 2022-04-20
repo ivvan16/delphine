@@ -126,3 +126,28 @@
     </div>
   </div>
 </div>
+
+<ng-template #mobileNavSection>
+  <div class="mobile-nav-section">
+    <img class="mobile-nav-close" [src]="assetsPath + '/mobile-nav-close.svg'">
+    <div class="mobile-nav-links">
+      <div>About project</div>
+      <div>Team</div>
+      <div>Contacts</div>
+      <div class="nav-login">
+        <div>Join us</div>
+        <div class="circle-action">
+          <img [src]="assetsPath + '/arrow-right.svg'">
+        </div>
+      </div>
+      <div class="mobile-nav-footer-contacts">
+        <div class="footer-contacts">
+          <a href="https://www.instagram.com/delphyneio" target="_blank"><img [src]="assetsPath + '/instagram.svg'"></a>
+          <a href="https://twitter.com/delphyneio" target="_blank"><img [src]="assetsPath + '/twitter.svg'"></a>
+          <a href="https://discord.com/users/delphyneio" target="_blank"><img [src]="assetsPath + '/discord.svg'"></a>
+        </div>
+        <a class="mobile-nav-footer-mail" href="mailto:ask@delphyne.io" target="_blank">ask@delphyne.io</a>
+      </div>
+    </div>
+  </div>
+</ng-template>

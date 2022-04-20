@@ -327,3 +327,53 @@
   text-decoration: none;
   color: #262626;
 }
+
+
+// Mobile styles
+.mobile-nav-section {
+  display: flex;
+  height: 100%;
+  background-color: #000000;
+  background-image: url('../assets/mobile-nav.svg');
+  background-repeat: round;
+  background-size: contain;
+  color: #FFFFFF;
+  padding-left: 10%;
+}
+
+.mobile-nav-close {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.75rem;
+}
+
+.mobile-nav-links {
+  margin-top: 45%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.mobile-nav-links > * {
+  line-height: 4rem;
+}
+
+.mobile-nav-footer-contacts {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  line-height: 3rem !important;
+
+  .footer-contacts {
+    align-self: flex-start;
+  }
+}
+
+.mobile-nav-footer-mail {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
