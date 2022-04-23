@@ -1,6 +1,9 @@
 <div class="outer-container">
   <div #navBar class="navbar">
-    <div class="nav-logo">LOGO</div>
+    <div class="logo-container">
+      <div class="logo-image"></div>
+      <div class="nav-logo"></div>
+    </div>
     <div *ngIf="!(isMobile | async)" class="nav-section">
       <div (click)="scroll(projectSection)">About project</div>
       <div (click)="scroll(teamSection)">Team</div>
@@ -99,7 +102,6 @@
     <div class="team-circle1">
       <div class="team-circle2">
         <div class="logo-circle">
-          {{ isMobile | async }}
         </div>
       </div>
       <ng-container *ngIf="!(isMobile | async)">
