@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   height: 5rem;
-  width: 80%;
+  width: 90%;
   margin-bottom: 2.5rem;
   margin-top: 2rem;
   border-bottom: 1px solid rgba(38, 38, 38, 0.2);
@@ -25,7 +25,7 @@
 
 .nav-logo {
   font-family: "Druk Wide Bold";
-  font-size: 47px;
+  font-size: 3rem;
   align-self: flex-end;
 }
 
@@ -111,7 +111,7 @@
 .what-we-do-section {
   display: flex;
   flex-direction: row;
-  margin-left: 10rem;
+  margin-left: 10%;
 
   .left-section {
     display: flex;
@@ -136,38 +136,51 @@
     height: 35rem;
     position: relative;
 
-    .circle {
-      width: 16rem;
-      height: 16rem;
+    .facts-line-section {
+      width: 15rem;
+      height: 15rem;
+      background: url('../assets/desktop-facts-line.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
       position: absolute;
+      top: 15rem;
+      left: 20rem;
+    }
+  }
+}
 
-      .circle-fact {
-        width: 16rem;
-        height: 16rem;
-        border-radius: 50%;
-        box-shadow: 0px 4px 25px 0px #e6d7f4;
-        position: relative;
+.circle {
+  width: 16rem;
+  height: 16rem;
+  position: absolute;
 
-        .inner-circle {
-          width: 13rem;
-          height: 13rem;
-          border-radius: 50%;
-          background-color: rgba(230, 215, 244, 0.4);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin: -6.5rem 0 0 -6.5rem;
-          display: flex;
-          align-items: center;
+  .circle-fact {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    box-shadow: 0px 4px 25px 0px #e6d7f4;
+    position: relative;
 
-          .fact {
-            text-align: center;
-            margin-left: 1.5rem;
-            margin-right: 1.5rem;
-            font-size: 1.25rem;
-            line-height: 2rem;
-          }
-        }
+    .inner-circle {
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      background-color: rgba(230, 215, 244, 0.4);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -6.5rem 0 0 -6.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .fact {
+        text-align: center;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 2rem;
       }
     }
   }
@@ -188,7 +201,7 @@
 .team-header {
   font-weight: 400;
   font-size: 2.5rem;
-  margin-left: 10rem;
+  margin-left: 10%;
   margin-top: 5rem;
   align-self: flex-start;
 }
@@ -240,7 +253,7 @@
   align-items: center;
   justify-content: center;
   font-family: "Druk Wide Bold";
-  font-size: 47px;
+  font-size: 3rem;
 }
 
 .contact-form {
@@ -295,7 +308,7 @@
 
 .footer-header {
   align-self: flex-start;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 5rem;
   font-size: 2.5rem;
   max-width: 25rem;
@@ -305,7 +318,7 @@
   display: flex;
   justify-content: space-between;
   height: 5rem;
-  width: 80%;
+  width: 90%;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   border-top: 1px solid rgba(38, 38, 38, 0.2);
@@ -318,8 +331,16 @@
 }
 
 .footer-contacts > * {
-  margin-right: 1rem;
   cursor: pointer;
+}
+
+.footer-social-networks {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-social-networks > * {
+  margin-right: 1rem;
 }
 
 .footer-mail {
@@ -330,6 +351,16 @@
 
 
 // Mobile styles
+.mobile-nav-burger {
+  background-image: url('../assets/burger.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
 .mobile-nav-section {
   display: flex;
   height: 100%;
@@ -360,6 +391,54 @@
   line-height: 4rem;
 }
 
+.mobile-sub-header {
+  width: 70%;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.mobile-facts-section {
+  width: 100%;
+  height: 140rem;
+  position: relative;
+
+  .circle {
+    width: 38rem;
+    height: 38rem;
+    position: absolute;
+
+    .circle-fact {
+      width: 100%;
+      height: 100%;
+
+      .inner-circle {
+        width: 80%;
+        height: 80%;
+        margin: -40% 0 0 -40%;
+
+        .fact {
+          font-size: 3rem;
+          line-height: 4rem;
+        }
+      }
+    }
+  }
+
+  .mobile-facts-line-section {
+    width: 90%;
+    height: 58rem;
+    background: url('../assets/mobile-facts-line.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 40rem;
+    left: 5%;
+  }
+}
+
 .mobile-nav-footer-contacts {
   position: absolute;
   bottom: 5%;
@@ -376,4 +455,163 @@
   text-decoration: none;
   color: #FFFFFF;
   font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+  .navbar > * {
+    align-self: center;
+  }
+
+  .container {
+    margin-top: 5rem;
+    width: 90%;
+
+    .text-content {
+      width: 36rem;
+      top: 25rem;
+
+      .header {
+        span {
+          float: left;
+        }
+        text-align: right;
+        text-align-last: left;
+        font-size: 6.5rem;
+        line-height: 7rem;
+      }
+
+      .sub-header {
+        display: none;
+      }
+    }
+  }
+
+  .what-we-do-section {
+    margin: 0 5%;
+
+    .left-section {
+      width: 100%;
+
+      p {
+        font-size: 5rem;
+        font-weight: 300;
+      }
+
+      div {
+        width: 90%;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+    }
+
+    .right-section {
+      display: none;
+    }
+  }
+
+  .team-header {
+    margin: 0 5%;
+    font-size: 5rem;
+    font-weight: 300;
+  }
+
+  .team-circle1 {
+    border: none;
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .team-circle2 {
+      width: 80%;
+      height: 80%;
+      margin: 0;
+      position: unset;
+
+      .logo-circle {
+        height: 20rem;
+        width: 20rem;
+      }
+    }
+  }
+
+
+  .contact-form {
+    width: 80%;
+    padding: 0 5%;
+
+    .contact-header {
+      font-size: 4.5rem;
+      font-weight: 400;
+    }
+
+    .contact-sub-header {
+      font-size: 2rem;
+      line-height: 3rem;
+      max-width: 80%;
+    }
+
+    .contact-buttons {
+      height: 14rem;
+
+    }
+
+    .contact-buttons > * {
+      font-size: 2rem;
+      height: 6rem;
+    }
+  }
+
+  .footer-header {
+    margin: 5rem 5% 0;
+    font-size: 3.5rem;
+    max-width: 73%;
+    font-weight: 300;
+  }
+
+  .footer {
+    margin: 3rem 0 4rem 0;
+    flex-direction: column;
+    height: unset;
+
+    .footer-contacts {
+      margin-top: 3rem;
+      flex-direction: column;
+
+      .footer-social-networks > * {
+        img {
+          height: 6rem;
+          width: 6rem;
+        }
+
+        margin-right: 2rem;
+      }
+
+      .footer-mail {
+        font-weight: 500;
+        margin-top: 2rem;
+      }
+    }
+
+    .footer-contacts > * {
+      align-self: flex-start;
+    }
+
+    .nav-section {
+      margin-top: 3rem;
+
+      .nav-login {
+        .circle-action {
+          height: 4rem;
+          width: 4rem;
+        }
+      }
+    }
+  }
+
+  .footer > * {
+    font-size: 2.5rem;
+    align-self: flex-start;
+  }
 }

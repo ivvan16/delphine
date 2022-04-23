@@ -32,3 +32,10 @@
 .member-role {
   font-size: 0.9rem;
 }
+
+@media (max-width: 500px) {
+  .team-member-photo {
+    width: 9rem;
+    height: 9rem;
+  }
+}

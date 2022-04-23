@@ -1,7 +1,7 @@
 <div class="outer-container">
   <div #navBar class="navbar">
     <div class="nav-logo">LOGO</div>
-    <div class="nav-section">
+    <div *ngIf="!(isMobile | async)" class="nav-section">
       <div (click)="scroll(projectSection)">About project</div>
       <div (click)="scroll(teamSection)">Team</div>
       <div (click)="scroll(contactForm)">Contacts</div>
@@ -13,22 +13,27 @@
         </div>
       </div>
     </div>
+    <div *ngIf="isMobile | async" class="mobile-nav-burger"></div>
   </div>
   <div class="container">
     <div class="logo"></div>
     <div class="text-content">
       <div class="header">
-        The new vision of nft art
+        <span>The new</span> vision of nft art
       </div>
       <div class="sub-header">
         Explore the best collections from hand-picked digital artists out there and find your gem.
       </div>
     </div>
   </div>
+  <div *ngIf="isMobile | async"
+     class="mobile-sub-header">
+    Explore the best collections from hand-picked digital artists out there and find your gem.
+  </div>
   <div class="team-section">
     <div #projectSection class="what-we-do-section">
       <div class="left-section">
-        <p>What we do:</p>
+        <p>What we do</p>
         <div>
           Delphyne is a digital art marketplace built on blockchain technology that offers true ownership
           and digital scarcity. Delphyne uses NEAR cryptocurrency as the medium of exchange between creators
@@ -52,44 +57,84 @@
           </div>
         </div>
 
-        <div class="circle" [ngStyle]="{bottom: '1rem', left: '34rem'}">
+        <div class="circle" [ngStyle]="{bottom: '1rem', left: '33rem'}">
           <div class="circle-fact">
             <div class="inner-circle">
               <div class="fact">Marketplace fee at 5% per transaction</div>
             </div>
           </div>
         </div>
+        <div class="facts-line-section"></div>
       </div>
     </div>
+    <div *ngIf="isMobile | async" class="mobile-facts-section">
+      <div class="mobile-facts-line-section">
+        <div class="circle" [ngStyle]="{top: '-36rem', right: '-8rem'}">
+          <div class="circle-fact">
+            <div class="inner-circle">
+              <div class="fact">NEAR’s fast (1 to 2 seconds) & budget-friendly transactions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="circle" [ngStyle]="{top: '3rem', left: '-10rem'}">
+          <div class="circle-fact">
+            <div class="inner-circle">
+              <div class="fact" [ngStyle]="{width: '80%'}">Arts saved securely in Arweave</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="circle" [ngStyle]="{bottom: '-26rem', right: '-8rem'}">
+          <div class="circle-fact">
+            <div class="inner-circle">
+              <div class="fact" [ngStyle]="{'text-align': 'left'}">Marketplace fee at 5% per transaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div #teamSection class="team-header">Team</div>
     <div class="team-circle1">
       <div class="team-circle2">
         <div class="logo-circle">
-          LOGO
+          {{ isMobile | async }}
         </div>
       </div>
-      <app-team-member
-       *ngFor="let member of teamMembers"
-       [name]="member.name"
-       [role]="member.role"
-       [ngStyle]="member.position"
-      ></app-team-member>
-      <div class="circle-point" [ngStyle]="{
-        right: '8rem',
-        bottom: '11.5rem'
-      }"></div>
-      <div class="circle-point" [ngStyle]="{
-        right: '6rem',
-        top: '15rem'
-      }"></div>
-      <div class="circle-point" [ngStyle]="{
-        left: '5.5rem',
-        top: '7rem'
-      }"></div>
-      <div class="circle-point" [ngStyle]="{
-        left: '13rem',
-        bottom: '1.5rem'
-      }"></div>
+      <ng-container *ngIf="!(isMobile | async)">
+        <app-team-member
+          *ngFor="let member of teamMembers"
+          [name]="member.name"
+          [role]="member.role"
+          [ngStyle]="member.position"
+        ></app-team-member>
+        <div class="circle-point" [ngStyle]="{
+          right: '8rem',
+          bottom: '11.5rem'
+        }"></div>
+        <div class="circle-point" [ngStyle]="{
+          right: '6rem',
+          top: '15rem'
+        }"></div>
+        <div class="circle-point" [ngStyle]="{
+          left: '5.5rem',
+          top: '7rem'
+        }"></div>
+        <div class="circle-point" [ngStyle]="{
+          left: '13rem',
+          bottom: '1.5rem'
+        }"></div>
+      </ng-container>
+
+      <ng-container *ngIf="isMobile | async">
+        <app-team-member
+          *ngFor="let member of teamMobileMembers"
+          [name]="member.name"
+          [role]="member.role"
+          [ngStyle]="member.position"
+        ></app-team-member>
+      </ng-container>
     </div>
   </div>
   <div #contactForm class="contact-form">
@@ -110,9 +155,11 @@
   </div>
   <div class="footer">
     <div class="footer-contacts">
-      <a href="https://www.instagram.com/delphyneio" target="_blank"><img [src]="assetsPath + '/instagram.svg'"></a>
-      <a href="https://twitter.com/delphyneio" target="_blank"><img [src]="assetsPath + '/twitter.svg'"></a>
-      <a href="https://discord.com/users/delphyneio" target="_blank"><img [src]="assetsPath + '/discord.svg'"></a>
+      <div class="footer-social-networks">
+        <a href="https://www.instagram.com/delphyneio" target="_blank"><img [src]="assetsPath + '/instagram.svg'"></a>
+        <a href="https://twitter.com/delphyneio" target="_blank"><img [src]="assetsPath + '/twitter.svg'"></a>
+        <a href="https://discord.com/users/delphyneio" target="_blank"><img [src]="assetsPath + '/discord.svg'"></a>
+      </div>
       <a class="footer-mail" href="mailto:ask@delphyne.io" target="_blank">ask@delphyne.io</a>
     </div>
     <div class="nav-section">
