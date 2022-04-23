@@ -373,22 +373,32 @@
 }
 
 .mobile-nav-close {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   position: absolute;
-  right: 1.5rem;
-  top: 1.75rem;
+  right: 3rem;
+  top: 3.25rem;
+  cursor: pointer;
 }
 
 .mobile-nav-links {
   margin-top: 45%;
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 3rem;
+
+  .nav-login {
+    .circle-action {
+      margin-right: 2rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 }
 
 .mobile-nav-links > * {
-  line-height: 4rem;
+  line-height: 8rem;
+  cursor: pointer;
 }
 
 .mobile-sub-header {
@@ -444,17 +454,26 @@
   bottom: 5%;
   display: flex;
   flex-direction: column;
-  line-height: 3rem !important;
+  line-height: 7rem !important;
 
   .footer-contacts {
     align-self: flex-start;
+
+    a {
+      margin-right: 3rem;
+
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
   }
 }
 
 .mobile-nav-footer-mail {
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 @media (max-width: 500px) {

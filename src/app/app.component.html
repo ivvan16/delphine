@@ -1,4 +1,4 @@
-<div class="outer-container">
+<!-- <div class="outer-container">
   <div #navBar class="navbar">
     <div class="nav-logo">LOGO</div>
     <div *ngIf="!(isMobile | async)" class="nav-section">
@@ -172,7 +172,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <ng-template #mobileNavSection>
   <div class="mobile-nav-section">
@@ -198,3 +198,4 @@
     </div>
   </div>
 </ng-template>
+<ng-container *ngTemplateOutlet="mobileNavSection"></ng-container>
