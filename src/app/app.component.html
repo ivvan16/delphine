@@ -19,7 +19,7 @@
     <div
       *ngIf="isMobile | async"
       class="mobile-nav-burger"
-      (click)="mobileNavigationClicked = !mobileNavigationClicked"
+      (click)="mobileNavigationClicked = !mobileNavigationClicked; mobileNavigationInitialized = true"
     ></div>
   </div>
   <div class="container">
@@ -208,7 +208,7 @@
   </div>
 </ng-template>
 
-<div *ngIf="(isMobile | async)"
+<div *ngIf="(isMobile | async) && mobileNavigationInitialized"
    class="overlay-navigation"
     [class.show-mobile-navigation]="mobileNavigationClicked"
     [class.hide-mobile-navigation]="!mobileNavigationClicked">

@@ -145,6 +145,7 @@ export class AppComponent {
       map((e: any) => e.target.innerWidth < 500),
     );
 
+  mobileNavigationInitialized = false;
   mobileNavigationClicked = false;
 
   constructor(private cd: ChangeDetectorRef) {
