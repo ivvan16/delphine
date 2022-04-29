@@ -16,13 +16,17 @@
         </div>
       </div>
     </div>
-    <div *ngIf="isMobile | async" class="mobile-nav-burger"></div>
+    <div
+      *ngIf="isMobile | async"
+      class="mobile-nav-burger"
+      (click)="mobileNavigationClicked = !mobileNavigationClicked"
+    ></div>
   </div>
   <div class="container">
     <div class="logo"></div>
     <div class="text-content">
       <div class="header">
-        <span>The new</span> vision of nft art
+        <span>The new</span> vision of <span>nft art</span>
       </div>
       <div class="sub-header">
         Explore the best collections from hand-picked digital artists out there and find your gem.
@@ -178,12 +182,15 @@
 
 <ng-template #mobileNavSection>
   <div class="mobile-nav-section">
-    <img class="mobile-nav-close" [src]="assetsPath + '/mobile-nav-close.svg'">
+    <img class="mobile-nav-close"
+     [src]="assetsPath + '/mobile-nav-close.svg'"
+     (click)="mobileNavigationClicked = !mobileNavigationClicked">
     <div class="mobile-nav-links">
-      <div>About project</div>
-      <div>Team</div>
-      <div>Contacts</div>
-      <div class="nav-login">
+      <div (click)="scroll(projectSection, true)">About project</div>
+      <div (click)="scroll(teamSection, true)">Team</div>
+      <div (click)="scroll(contactForm, true)">Contacts</div>
+      <div class="nav-login"
+        (click)="scroll(contactForm, true)">
         <div>Join us</div>
         <div class="circle-action">
           <img [src]="assetsPath + '/arrow-right.svg'">
@@ -200,4 +207,10 @@
     </div>
   </div>
 </ng-template>
-<!-- <ng-container *ngTemplateOutlet="mobileNavSection"></ng-container> -->
+
+<div *ngIf="(isMobile | async)"
+   class="overlay-navigation"
+    [class.show-mobile-navigation]="mobileNavigationClicked"
+    [class.hide-mobile-navigation]="!mobileNavigationClicked">
+  <ng-container *ngTemplateOutlet="mobileNavSection"></ng-container>
+</div>

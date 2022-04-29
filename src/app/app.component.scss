@@ -101,7 +101,7 @@
   background-repeat: no-repeat;
   width: 40rem;
   height: 40rem;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .text-content {
@@ -127,7 +127,7 @@
   font-size: 1.3rem;
   line-height: 1.75rem;
   font-weight: 400;
-  z-index: 1001;
+  z-index: 3;
 }
 
 .what-we-do-section {
@@ -384,8 +384,8 @@
 }
 
 .mobile-nav-section {
-  display: flex;
   height: 100%;
+  display: flex;
   background-color: #000000;
   background-image: url('../assets/mobile-nav.svg');
   background-repeat: round;
@@ -516,7 +516,6 @@
           float: left;
         }
         text-align: right;
-        text-align-last: left;
         font-size: 6.5rem;
         line-height: 7rem;
       }
@@ -654,5 +653,46 @@
   .footer > * {
     font-size: 2.5rem;
     align-self: flex-start;
+  }
+}
+
+// Mobile navigation screen
+.overlay-navigation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.show-mobile-navigation {
+  animation: slide-in 1s both;
+}
+
+.hide-mobile-navigation {
+  animation: slide-out 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
   }
 }

@@ -130,7 +130,11 @@ export class AppComponent {
 
   assetsPath = environment.assetsPath;
 
-  scroll(el: HTMLElement) {
+  scroll(el: HTMLElement, isMobile?: boolean) {
+    if (isMobile) {
+      this.mobileNavigationClicked = false;
+    }
+
     el.scrollIntoView({behavior: 'smooth'});
   }
 
@@ -140,6 +144,8 @@ export class AppComponent {
       startWith({ target: { innerWidth: window.innerWidth }}),
       map((e: any) => e.target.innerWidth < 500),
     );
+
+  mobileNavigationClicked = false;
 
   constructor(private cd: ChangeDetectorRef) {
 
