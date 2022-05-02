@@ -1,5 +1,7 @@
-<div class="team-member-photo"></div>
-<div *ngIf="showTooltip"
+<div class="team-member-photo">
+  <img class="image" [src]="imageUrl">
+</div>
+<div *ngIf="showTooltip && !isMobile"
   class="team-role">
   <div class="member-name">{{ name }}</div>
   <div class="member-role">{{ role }}</div>

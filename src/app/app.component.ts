@@ -15,6 +15,7 @@ export class AppComponent {
     {
       name: 'Dmitry',
       role: 'Project Manager',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Dmitry.svg',
       position: {
         left: '-2rem',
         top: '12rem'
@@ -23,6 +24,7 @@ export class AppComponent {
     {
       name: 'Diana',
       role: 'Designer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
       position: {
         left: '0.5rem',
         top: '34rem'
@@ -31,6 +33,7 @@ export class AppComponent {
     {
       name: 'John',
       role: 'Frontend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/John.svg',
       position: {
         left: '14rem',
         top: '3rem'
@@ -39,6 +42,7 @@ export class AppComponent {
     {
       name: 'Denis',
       role: 'Blockchain Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
       position: {
         right: '4rem',
         top: '2rem'
@@ -47,6 +51,7 @@ export class AppComponent {
     {
       name: 'Kirill',
       role: 'Backend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Kirill.svg',
       position: {
         right: '-3.5rem',
         top: '21rem'
@@ -55,6 +60,7 @@ export class AppComponent {
     {
       name: 'Vadim',
       role: 'Backend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Vadim.svg',
       position: {
         right: '14rem',
         bottom: '3rem'
@@ -66,6 +72,7 @@ export class AppComponent {
     {
       name: 'Dmitry',
       role: 'Project Manager',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Dmitry.svg',
       position: {
         left: '1rem',
         top: '8rem'
@@ -74,6 +81,7 @@ export class AppComponent {
     {
       name: 'Diana',
       role: 'Designer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
       position: {
         left: '1rem',
         bottom: '8rem'
@@ -82,6 +90,7 @@ export class AppComponent {
     {
       name: 'John',
       role: 'Frontend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/John.svg',
       position: {
         left: '16rem',
         top: '0rem'
@@ -90,6 +99,7 @@ export class AppComponent {
     {
       name: 'Denis',
       role: 'Blockchain Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
       position: {
         right: '1rem',
         top: '8rem'
@@ -98,6 +108,7 @@ export class AppComponent {
     {
       name: 'Kirill',
       role: 'Backend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Kirill.svg',
       position: {
         right: '1rem',
         bottom: '8rem'
@@ -106,6 +117,7 @@ export class AppComponent {
     {
       name: 'Vadim',
       role: 'Backend Developer',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Vadim.svg',
       position: {
         left: '16rem',
         bottom: '0rem'

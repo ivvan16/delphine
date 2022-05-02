@@ -113,6 +113,7 @@
           *ngFor="let member of teamMembers"
           [name]="member.name"
           [role]="member.role"
+          [imageUrl]="member.imageUrl"
           [ngStyle]="member.position"
         ></app-team-member>
         <div class="circle-point" [ngStyle]="{
@@ -136,8 +137,10 @@
       <ng-container *ngIf="isMobile | async">
         <app-team-member
           *ngFor="let member of teamMobileMembers"
+          [isMobile]="true"
           [name]="member.name"
           [role]="member.role"
+          [imageUrl]="member.imageUrl"
           [ngStyle]="member.position"
         ></app-team-member>
       </ng-container>

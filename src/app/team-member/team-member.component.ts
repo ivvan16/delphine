@@ -1,4 +1,4 @@
-import { Component, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-team-member',
@@ -9,6 +9,8 @@ export class TeamMemberComponent implements OnInit {
 
   @Input() name = "";
   @Input() role = "";
+  @Input() imageUrl = "";
+  @Input() isMobile = false;
 
   showTooltip = false;
   constructor() { }
@@ -23,5 +25,4 @@ export class TeamMemberComponent implements OnInit {
   @HostListener('mouseleave') onLeave() {
     this.showTooltip = false;
   }
-
 }
