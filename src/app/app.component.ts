@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
 import { fromEvent } from "rxjs";
 import { debounceTime, map, startWith, tap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
+import { ApiService } from "./services/api.service";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import { environment } from "src/environments/environment";
 })
 export class AppComponent {
   title = 'delphyne';
+
+  mail = '';
 
   teamMembers = [
     {
@@ -160,7 +163,9 @@ export class AppComponent {
   mobileNavigationInitialized = false;
   mobileNavigationClicked = false;
 
-  constructor(private cd: ChangeDetectorRef) {
+  constructor(private apiService: ApiService) {}
 
+  sendEmail(mail: string) {
+    this.apiService.sendMail(mail);
   }
 }

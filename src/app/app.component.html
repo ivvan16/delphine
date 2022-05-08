@@ -154,9 +154,10 @@
     </div>
     <div class="contact-buttons">
       <input
+        [(ngModel)]="mail"
         class="contact-input"
         placeholder="Your email">
-      <button class="contact-button">Send</button>
+      <button class="contact-button" (click)="sendEmail(mail)">Send</button>
     </div>
   </div>
   <div class="footer-header">
