@@ -30,7 +30,7 @@ export class AppComponent implements OnDestroy {
     {
       name: 'Diana',
       role: 'Designer',
-      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
       position: {
         left: '0.5rem',
         top: '34rem'
@@ -48,7 +48,7 @@ export class AppComponent implements OnDestroy {
     {
       name: 'Denis',
       role: 'Blockchain Developer',
-      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
       position: {
         right: '4rem',
         top: '2rem'
