@@ -112,6 +112,7 @@
       <ng-container *ngIf="!(isMobile | async)">
         <app-team-member
           *ngFor="let member of teamMembers"
+          [isMobile]="false"
           [name]="member.name"
           [role]="member.role"
           [imageUrl]="member.imageUrl"
@@ -152,13 +153,29 @@
     <div class="contact-sub-header">
       Please, provide your email to get notified when the project is launched
     </div>
-    <div class="contact-buttons">
+    <form
+     class="contact-buttons"
+     (ngSubmit)="sendEmail(mail)">
       <input
+        type="text"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         [(ngModel)]="mail"
+        [ngModelOptions]="{standalone: true}"
+        #prmEmail="ngModel"
         class="contact-input"
         placeholder="Your email">
-      <button class="contact-button" (click)="sendEmail(mail)">Send</button>
-    </div>
+      <div class="email-error" *ngIf="!prmEmail?.valid && (prmEmail?.dirty || prmEmail?.touched)">
+        Email is invalid
+       </div>
+      <button
+        class="contact-button"
+        type="submit"
+        [disabled]="!prmEmail?.valid">
+        <ng-container *ngIf="!mailSendLoading">Send</ng-container>
+        <mat-spinner *ngIf="mailSendLoading" [diameter]="30"></mat-spinner>
+      </button>
+    </form>
   </div>
   <div class="footer-header">
     For any inquiries

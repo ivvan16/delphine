@@ -19,10 +19,22 @@ export class TeamMemberComponent implements OnInit {
   }
 
   @HostListener('mouseenter') onEnter() {
-    this.showTooltip = true;
+    console.log('mouseenter', 'isMobile: ', this.isMobile);
+    if (!this.isMobile) {
+      this.showTooltip = true;
+    }
   }
 
   @HostListener('mouseleave') onLeave() {
-    this.showTooltip = false;
+    console.log('mouseleave', 'isMobile: ', this.isMobile);
+    if (!this.isMobile) {
+      this.showTooltip = false;
+    }
+  }
+
+  @HostListener('click') onClick() {
+    if (this.isMobile) {
+      this.showTooltip = !this.showTooltip;
+    }
   }
 }

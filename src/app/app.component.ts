@@ -1,6 +1,7 @@
-import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
-import { fromEvent } from "rxjs";
-import { debounceTime, map, startWith, tap } from "rxjs/operators";
+import { Component, OnDestroy } from '@angular/core';
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { fromEvent, of, Subject } from "rxjs";
+import { debounceTime, delay, filter, finalize, map, startWith, switchMap, takeUntil, tap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { ApiService } from "./services/api.service";
 
@@ -9,10 +10,12 @@ import { ApiService } from "./services/api.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+  destroy = new Subject();
   title = 'delphyne';
 
   mail = '';
+  mailSendLoading = false;
 
   teamMembers = [
     {
@@ -84,7 +87,7 @@ export class AppComponent {
     {
       name: 'Diana',
       role: 'Designer',
-      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
       position: {
         left: '1rem',
         bottom: '8rem'
@@ -102,7 +105,7 @@ export class AppComponent {
     {
       name: 'Denis',
       role: 'Blockchain Developer',
-      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Denis.svg',
+      imageUrl: 'https://avatars.dicebear.com/api/pixel-art/Diana.svg',
       position: {
         right: '1rem',
         top: '8rem'
@@ -163,9 +166,28 @@ export class AppComponent {
   mobileNavigationInitialized = false;
   mobileNavigationClicked = false;
 
-  constructor(private apiService: ApiService) {}
+  ngOnDestroy() {
+    this.destroy.next();
+  }
+
+  constructor(
+    private apiService: ApiService,
+    private snackBar: MatSnackBar
+  ) {}
 
   sendEmail(mail: string) {
-    this.apiService.sendMail(mail);
+    of(mail)
+      .pipe(
+        takeUntil(this.destroy),
+        filter(mail => !!mail),
+        tap(() => this.mailSendLoading = true),
+        delay(500),
+        switchMap(mail => this.apiService.sendMail(mail)),
+        finalize(() => {
+          this.mailSendLoading = false;
+          this.snackBar.open('Email is successfully added.', '', { duration: 3000 });
+        })
+      )
+      .subscribe();
   }
 }
