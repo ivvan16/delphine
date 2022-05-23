@@ -159,15 +159,11 @@
       <input
         type="text"
         required
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         [(ngModel)]="mail"
         [ngModelOptions]="{standalone: true}"
         #prmEmail="ngModel"
         class="contact-input"
         placeholder="Your email">
-      <div class="email-error" *ngIf="!prmEmail?.valid && (prmEmail?.dirty || prmEmail?.touched)">
-        Email is invalid
-       </div>
       <button
         class="contact-button"
         type="submit"
